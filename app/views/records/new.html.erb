@@ -1,0 +1,42 @@
+<h1>Records#new</h1>
+
+
+
+
+<%= form_with model: @record do |form| %>
+    <div>
+        <%= form.label :patient_disease %>
+        <%= form.text_field :patient_disease %><br>
+        <% @record.errors.full_messages_for(:patient_disease).each do |message|%>
+            <div><%= message %></div>
+        <% end %>
+       
+    </div>
+
+    <div>
+        <%= form.label :suffering_period %>
+        <%= form.text_field :suffering_period %><br>
+        <% @record.errors.full_messages_for(:suffering_period).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :height %>
+        <%= form.text_field :height %><br>
+        <% @record.errors.full_messages_for(:height).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :weight %>
+        <%= form.text_field :weight %><br>
+        <% @record.errors.full_messages_for(:weight).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div><%= form.submit %></div>
+
+<% end %>

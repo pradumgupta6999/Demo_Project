@@ -1,0 +1,40 @@
+<% if user_signed_in? %> 
+ <div> Welcome <%= current_user.role %> </div> 
+    <% if current_user.role == "doctor" %>
+       
+       <% if current_user.doctor.nil? %>
+           <%= link_to "fill personal detail", new_doctor_path %>
+        <% else %>
+            <h1>Form ap ne bhar diya ha doctor ji</h1>
+        <% end %>
+        <%= link_to "today appoinments", doctors_path %>
+
+    <% elsif current_user.role == "patient" %>
+
+        <% if  current_user.patient.nil? %>
+            <%= link_to "fill personal detail",new_patient_path %><br>
+        <% else %>
+            <h1>Form app ne bhar diya ha patient ji</h1>
+        <% end %>
+    <%= link_to "fill yor problem", new_record_path %><br>
+    <%= link_to "appoinment ", patients_path %>
+
+
+
+    <% elsif current_user.role == "hospital"%>
+
+        <% if current_user.hospital.nil? %>
+            <%= link_to "fill personal detail",new_hospital_path %>
+        <% else %>
+            <h1>Form app ne bhar diya ha hospital ji</h1>
+            <%=link_to "See all doctors present in the city",hospitals_path %>
+        <% end %>
+
+        
+
+    <% end %>
+    
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %> 
+<% end %>

@@ -1,0 +1,61 @@
+<h1>Doctors#new</h1>
+<p>Find me in app/views/doctors/new.html.erb</p>
+<%= form_with model: @doctor do |form| %>
+    <div>
+        <%= form.label :doctor_name %><br>
+        <%= form.text_field :doctor_name %>
+        <% @doctor.errors.full_messages_for(:doctor_name).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :mobile %><br>
+        <%= form.number_field :mobile %><br>
+        <% @doctor.errors.full_messages_for(:mobile).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :address %><br>
+        <%= form.text_field :address %><br>
+        <% @doctor.errors.full_messages_for(:address).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :specilization %><br>
+        <%= form.text_field :specilization %><br>
+        <% @doctor.errors.full_messages_for(:specilization).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :start_time %><br>
+        <%= form.time_field :start_time %><br>
+        <% @doctor.errors.full_messages_for(:start_time).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :end_time %><br>
+        <%= form.time_field :end_time %><br>
+        <% @doctor.errors.full_messages_for(:end_time).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+        <div>
+        <%= form.label :appointment_date %><br>
+        <%= form.date_field :appointment_date %><br>
+        <% @doctor.errors.full_messages_for(:appointment_date).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div><%= form.submit %></div>
+<% end %>    

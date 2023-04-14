@@ -1,0 +1,22 @@
+<h1>Patients#index</h1>
+<table border="1">
+<tr>
+    <th>Doctor name</th>
+    <th>Specilization</th>
+    <th>Start_time</th>
+    <th>End time</th>
+    <th>Appoinment Date</th>
+    <th>Take appoinment</th>
+</tr>
+<% @doctor.each do |d| %>
+    <tr>
+        <td><%= d.doctor_name %></td>
+        <td><%= d.specilization %></td>
+        <td><%= d.start_time %></td>
+        <td><%= d.end_time %></td>
+        <td><%= d.appointment_date %></td>
+        <td><%= link_to "take appoinment ",edit_appointment_path(d.id) %></td>
+        <!--<td><%= link_to "take appoinment",patient_path(d.id) %></td>-->
+    </tr>
+<% end %>
+</table>

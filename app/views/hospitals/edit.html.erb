@@ -1,0 +1,27 @@
+#hospital#edit
+<%  if @hospitalhavedoctors == [] %>
+    <% @hospital.doctors << @doctor%>
+    <h1>@doctor is know in be avaliable in your hospital </h1>
+<% elsif @hospitalhavedoctors.length > 1 %>
+    <% @hospitalhavedoctors.each do |form| %>
+        <% if form == @doctor %>
+            <%= form %>
+            <h1>is already present in hospital</h1>
+        <% else %>
+           <% @hospital.doctors << @doctor %>
+            <h1>@doctor is know in be avaliable in your hospital </h1>
+        <% end %>
+    <% end %>
+<% else %>
+    <% if @hospitalhavedoctors.length == 1 %>
+        <%if @hospitalhavedoctors == @doctors %>
+            <h1>@hospitalhavedoctors is already in hospital</h1>
+        <% else %>
+           <% @hospital.doctors << @doctor %>
+            <h1>@doctor is know in be avaliable in your hospital </h1>
+        <% end %>
+    <% end %>
+<% end %>
+
+
+

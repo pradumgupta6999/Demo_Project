@@ -1,0 +1,41 @@
+<h1>Hospitals#new</h1>
+
+
+<%= form_with model: @hospital do |form| %>
+    <div>
+        <%= form.label :hospital_name %>
+        <%= form.text_field :hospital_name  %>
+        <% @hospital.errors.full_messages_for(:hospital_name).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+        
+        
+    </div>
+
+    <div>
+        <%= form.label :mobile %>
+        <%= form.text_field :mobile %>
+        <% @hospital.errors.full_messages_for(:mobile).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :address %>
+        <%= form.text_field :address %>
+        <% @hospital.errors.full_messages_for(:address).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :city %>
+        <%= form.text_field :city %>
+        <% @hospital.errors.full_messages_for(:city).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div><%= form.submit%></div>
+
+<% end %>

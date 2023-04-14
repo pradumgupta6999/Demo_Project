@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient_disease: MyString
+  suffering_period: MyString
+  height: MyString
+  weight: MyString
+  patient: one
+
+two:
+  patient_disease: MyString
+  suffering_period: MyString
+  height: MyString
+  weight: MyString
+  patient: two

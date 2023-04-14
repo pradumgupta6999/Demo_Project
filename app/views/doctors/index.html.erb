@@ -1,0 +1,31 @@
+<h1>doctor#index</h1>
+<h1>Doctors#today#apponment#been#taken</h1>
+<table border="1">
+    <tr>
+        <th>Patient name</th>
+        <th>Patient Disease</th>
+        <th>Patient suffering Period</th>
+        <th>Time of Appointment</th>
+        <th>See Patient Record</th>
+        <th>pdf</th>
+    </tr>
+    </td>
+    
+        <% @appointment.each do |p| %>
+
+        <tr>
+            <% a=Patient.find(p.patient_id) %>
+                <td><%= a.patient_name %></td>
+            <% r=Record.find_by(patient_id:p.patient_id)%>
+                <td><%= r.patient_disease %></td>
+                <td><%= r.suffering_period%></td>
+                <td><%= p.start_time%></td>
+                <td><%= link_to "See Patient Record",record_path(r) %></td>
+                <td><%= link_to "pdf",record_path(r) %></td>
+
+        </tr>
+        <% end %>
+            
+
+</table>
+

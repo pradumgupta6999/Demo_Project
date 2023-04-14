@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  doctor_name: MyString
+  mobile: 1
+  address: MyString
+  specilization: MyString
+  user: one
+
+two:
+  doctor_name: MyString
+  mobile: 1
+  address: MyString
+  specilization: MyString
+  user: two

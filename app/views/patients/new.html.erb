@@ -1,0 +1,31 @@
+<h1>Patients#new</h1>
+
+<%= form_with model: @patient do |form| %>
+    <div>
+        <%= form.label :patient_name %>
+        <%= form.text_field :patient_name %>
+        <% @patient.errors.full_messages_for(:patient_name).each do |message|%>
+            <div><%= message %></div>
+        <% end %>
+       
+    </div>
+
+    <div>
+        <%= form.label :mobile %>
+        <%= form.text_field :mobile %>
+        <% @patient.errors.full_messages_for(:mobile).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :address %>
+        <%= form.text_field :address %>
+        <% @patient.errors.full_messages_for(:address).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div><%= form.submit %></div>
+
+<% end %>

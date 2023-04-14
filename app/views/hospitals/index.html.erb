@@ -1,0 +1,25 @@
+<h1>Hospitals#index</h1>
+
+<table border="1">
+    <tr>
+        <th>Doctor Name</th>
+        <th>Mobile</th>
+        <th>Address</th>
+        <th>Specilization</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Doctor you what in your hospital</th>
+    </tr>
+         
+    <% @doctor.each do |form| %>
+         <tr> 
+                <td><%= form.doctor_name %></td>
+                <td><%= form.mobile %></td>
+                <td><%= form.address %></td>
+                <td><%= form.specilization %></td>
+                <td><%= form.start_time %></td>
+                <td><%= form.end_time %></td>
+                <td><%= link_to "Doctor you what in your hospital", edit_hospital_path(form) %></td>
+        </tr>
+    <% end %>
+</table>

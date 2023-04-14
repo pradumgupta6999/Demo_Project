@@ -1,0 +1,10 @@
+<h1>Appointments#index</h1>
+<p>Find me in app/views/appointments/index.html.erb</p>
+
+<% @patient.each do |form| %>
+   Time =  <%= form.start_time %><br>
+   Doctor Id = <%= id=form.doctor_id  %><br>
+   <% b= Doctor.find(id) %>
+   Doctor Name = <%= b.doctor_name%><br><br>
+    
+<% end %>
